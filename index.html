@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ROBLOX WINDY | Windy Service — Robux, Telegram Stars & Brawl Stars Donat Do'koni</title>
+  <meta name="description" content="O'yinlar va Telegram uchun eng tezkor va ishonchli do'kon. Roblox barcha Game Pass'lar, Robux, Telegram Premium & Stars (akkauntga kirmasdan) hamda Brawl Stars donatlari!">
+  <meta name="theme-color" content="#07070C">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡️</text></svg>">
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#07070C',
+            surface: '#0E0E17',
+            cyanAccent: '#00F0FF',
+            purpleAccent: '#7000FF',
+            greenAccent: '#00FF87',
+            goldAccent: '#FFD700',
+            redAccent: '#FF3366',
+          },
+          fontFamily: {
+            gaming: ['Space Grotesk', 'Outfit', 'sans-serif'],
+            sans: ['Outfit', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-obsidian text-gray-100 min-h-screen relative selection:bg-purpleAccent/40 selection:text-cyanAccent bg-grid-pattern">
+
+  <!-- ============================================================== -->
+  <!-- AMBIENT GLOW ORBS IN BACKGROUND -->
+  <!-- ============================================================== -->
+  <div class="ambient-orb ambient-purple w-96 h-96 top-0 left-[-100px]"></div>
+  <div class="ambient-orb ambient-cyan w-[500px] h-[500px] top-40 right-[-150px]"></div>
+  <div class="ambient-orb ambient-green w-96 h-96 top-[1200px] left-[5%]"></div>
+  <div class="ambient-orb ambient-red w-[450px] h-[450px] top-[2200px] right-[5%]"></div>
+  <div class="ambient-orb ambient-purple w-96 h-96 bottom-20 left-[20%]"></div>
+
+  <!-- ============================================================== -->
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <!-- ============================================================== -->
+  <div class="bg-gradient-to-r from-purpleAccent/25 via-cyanAccent/20 to-purpleAccent/25 border-b border-white/10 text-xs py-2 px-4 text-center font-medium relative z-50 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
+      <span class="inline-flex items-center gap-1.5 text-cyanAccent font-bold">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyanAccent opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-cyanAccent"></span>
+        </span>
+        YANGILIK:
+      </span>
+      <span class="text-gray-200">Barcha Brawl Stars Skidka gemlar va Telegram Stars zaxirada mavjud!</span>
+      <a href="https://t.me/flexyha" target="_blank" rel="noopener noreferrer" class="underline text-cyanAccent hover:text-white font-semibold transition-colors flex items-center gap-1">
+        Buyurtma berish &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- STICKY GLASS NAVBAR -->
+  <!-- ============================================================== -->
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-cyanAccent via-purpleAccent to-redAccent p-[2px] transition-transform group-hover:scale-105 shadow-lg shadow-cyanAccent/20">
+          <div class="w-full h-full bg-obsidian rounded-[14px] flex items-center justify-center">
+            <span class="text-xl">👑</span>
+          </div>
+        </div>
+        <div>
+          <div class="font-extrabold text-lg sm:text-xl font-gaming tracking-wider text-white flex items-center gap-1.5">
+            <span>WINDY</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyanAccent to-purpleAccent">SERVICE</span>
+          </div>
+          <span class="text-[10px] tracking-widest uppercase text-gray-400 block -mt-1 font-semibold">Roblox & Gaming Store</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden lg:flex items-center gap-1 font-medium text-sm text-gray-300">
+        <a href="#hero" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-colors">Asosiy</a>
+        <a href="#catalog" onclick="setCategory('robux')" class="px-3.5 py-2 rounded-xl hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors flex items-center gap-1.5">
+          <span>💰 Robux</span>
+        </a>
+        <a href="#catalog" onclick="setCategory('stars')" class="px-3.5 py-2 rounded-xl hover:text-amber-400 hover:bg-amber-500/10 transition-colors flex items-center gap-1.5">
+          <span>⭐️ Telegram Stars</span>
+        </a>
+        <a href="#catalog" onclick="setCategory('brawl')" class="px-3.5 py-2 rounded-xl hover:text-rose-400 hover:bg-rose-500/10 transition-colors flex items-center gap-1.5">
+          <span>🔥 Brawl Stars</span>
+        </a>
+        <a href="#reviews" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-colors">Isbotlar (Reviews)</a>
+        <a href="#faq" class="px-3.5 py-2 rounded-xl hover:text-white hover:bg-white/5 transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Quick Action Buttons -->
+      <div class="hidden sm:flex items-center gap-2.5">
+        <!-- Main Channel Link -->
+        <a 
+          href="https://t.me/Roblox_W1ndy" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-3 py-2 rounded-xl glass-panel hover:bg-white/10 text-xs font-semibold text-gray-200 transition-all flex items-center gap-1.5 border border-white/10 hover:border-cyanAccent/40"
+          title="Kanalimizga obuna bo'lish"
+        >
+          <svg class="w-4 h-4 text-cyanAccent" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .26z"/>
+          </svg>
+          <span>Kanalimiz</span>
+        </a>
+
+        <!-- Proofs Link -->
+        <a 
+          href="https://t.me/w1ndy_otziv" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="px-3 py-2 rounded-xl glass-panel hover:bg-white/10 text-xs font-semibold text-gray-200 transition-all flex items-center gap-1.5 border border-white/10 hover:border-amber-400/40"
+          title="Mijozlarimiz fikrlari"
+        >
+          <span class="text-amber-400">⭐️</span>
+          <span>Isbotlar</span>
+        </a>
+
+        <!-- Admin Contact (Highlighted glowing button) -->
+        <a 
+          href="https://t.me/flexyha" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-cyber-admin px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-white transition-all flex items-center gap-2 cursor-pointer"
+        >
+          <span>Admin bilan aloqa</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        id="mobile-menu-btn" 
+        class="lg:hidden p-2 rounded-xl glass-panel text-gray-300 hover:text-white focus:outline-none" 
+        aria-label="Menyu"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <line x1="4" y1="6" x2="20" y2="6" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="4" y1="12" x2="20" y2="12" stroke-width="2" stroke-linecap="round"></line>
+          <line x1="4" y1="18" x2="20" y2="18" stroke-width="2" stroke-linecap="round"></line>
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- MOBILE DRAWER / MENU -->
+  <!-- ============================================================== -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-obsidian/95 backdrop-blur-2xl flex flex-col p-6 overflow-y-auto">
+    <div class="flex items-center justify-between pb-6 border-b border-white/10">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">👑</span>
+        <span class="font-extrabold text-lg font-gaming text-white">WINDY SERVICE</span>
+      </div>
+      <button id="mobile-menu-close" class="p-2 rounded-xl glass-panel text-gray-400 hover:text-white">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" stroke-width="2"></line>
+          <line x1="6" y1="6" x2="18" y2="18" stroke-width="2"></line>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="flex flex-col gap-3 py-6 text-base font-semibold">
+      <a href="#hero" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-gray-200">🏠 Asosiy sahifa</a>
+      <a href="#catalog" onclick="setCategory('robux')" class="mobile-nav-link p-3 rounded-xl hover:bg-emerald-500/10 text-emerald-400">💰 Robux & Plus Store</a>
+      <a href="#catalog" onclick="setCategory('stars')" class="mobile-nav-link p-3 rounded-xl hover:bg-amber-500/10 text-amber-300">⭐️ Telegram Stars & Premium</a>
+      <a href="#catalog" onclick="setCategory('brawl')" class="mobile-nav-link p-3 rounded-xl hover:bg-rose-500/10 text-rose-400">🔥 Brawl Stars (Pass & Gems)</a>
+      <a href="#reviews" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-gray-200">🎖 Isbotlar va Sharhlar</a>
+      <a href="#faq" class="mobile-nav-link p-3 rounded-xl hover:bg-white/5 text-gray-200">❓ Savol-Javoblar (FAQ)</a>
+    </nav>
+
+    <div class="mt-auto pt-6 border-t border-white/10 space-y-3">
+      <a href="https://t.me/flexyha" target="_blank" rel="noopener noreferrer" class="btn-cyber-admin w-full py-3.5 rounded-xl font-bold text-center block text-white">
+        Admin bilan aloqa (@flexyha)
+      </a>
+      <div class="grid grid-cols-2 gap-2">
+        <a href="https://t.me/Roblox_W1ndy" target="_blank" rel="noopener noreferrer" class="glass-panel py-2.5 rounded-xl text-center text-xs font-semibold text-gray-300 hover:text-white block">
+          📢 Kanal (@Roblox_W1ndy)
+        </a>
+        <a href="https://t.me/w1ndy_otziv" target="_blank" rel="noopener noreferrer" class="glass-panel py-2.5 rounded-xl text-center text-xs font-semibold text-gray-300 hover:text-white block">
+          ⭐️ Isbotlar (@w1ndy_otziv)
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="relative z-10">
+
+    <!-- ============================================================== -->
+    <!-- HERO SECTION -->
+    <!-- ============================================================== -->
+    <section id="hero" class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        
+        <!-- Trust Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cyanAccent/30 mb-8 shadow-lg shadow-cyanAccent/10 pulse-scale">
+          <span class="w-2 h-2 rounded-full bg-cyanAccent animate-pulse"></span>
+          <span class="text-xs sm:text-sm font-extrabold tracking-wider text-cyanAccent uppercase">
+            ⚡️ ARZON • ISHONCHLI • HALOL • TEZ
+          </span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black font-gaming tracking-tight text-white max-w-4xl mx-auto leading-tight sm:leading-none mb-6">
+          O'yinlar va Telegram uchun <br class="hidden sm:inline" />
+          <span class="shimmer-text">eng tezkor va ishonchli</span> do'kon!
+        </h1>
+
+        <!-- Sub-headline -->
+        <p class="text-base sm:text-lg text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          Roblox barcha Game Pass'lar, Robux, Telegram Premium & Stars (akkauntga kirmasdan) hamda Brawl Stars donatlari — hammasi bir joyda.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto mb-14">
+          <a 
+            href="#catalog" 
+            class="w-full sm:w-auto btn-cyber-primary px-8 py-4 rounded-2xl font-bold text-base text-white flex items-center justify-center gap-2.5 group cursor-pointer"
+          >
+            <span>Narxlarni ko'rish</span>
+            <svg class="w-5 h-5 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+
+          <a 
+            href="https://t.me/Roblox_W1ndy" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto glass-panel hover:bg-white/10 px-6 py-4 rounded-2xl font-semibold text-sm text-gray-200 border border-white/15 hover:border-cyanAccent/50 transition-all flex items-center justify-center gap-2"
+          >
+            <svg class="w-5 h-5 text-cyanAccent" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .26z"/>
+            </svg>
+            <span>Telegram Kanal (@Roblox_W1ndy)</span>
+          </a>
+
+          <a 
+            href="https://t.me/w1ndy_otziv" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto glass-panel hover:bg-white/10 px-5 py-4 rounded-2xl font-semibold text-sm text-gray-200 border border-white/15 hover:border-amber-400/50 transition-all flex items-center justify-center gap-2"
+          >
+            <span class="text-amber-400">⭐️</span>
+            <span>Isbotlar (@w1ndy_otziv)</span>
+          </a>
+        </div>
+
+        <!-- Bento Grid Highlights / Stat Tickers -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto">
+          
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-left border border-white/10">
+            <div class="text-cyanAccent text-xl mb-1">⚡️</div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white font-gaming">1 - 5 daqiqa</div>
+            <div class="text-xs text-gray-400 mt-0.5">Tezkor yetkazib berish</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-left border border-white/10">
+            <div class="text-amber-400 text-xl mb-1">🔒</div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white font-gaming">Parolsiz</div>
+            <div class="text-xs text-gray-400 mt-0.5">Akkauntga kirmasdan xavfsiz</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-left border border-white/10">
+            <div class="text-emerald-400 text-xl mb-1">⭐️</div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white font-gaming">10,000+</div>
+            <div class="text-xs text-gray-400 mt-0.5">Mamnun mijozlar</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-4 sm:p-5 text-left border border-white/10">
+            <div class="text-rose-400 text-xl mb-1">🔥</div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white font-gaming">Super Narx</div>
+            <div class="text-xs text-gray-400 mt-0.5">Katta skidka & bonuslar</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- QUICK CATEGORY JUMP / SHOWCASE BENTO BANNER -->
+    <!-- ============================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        
+        <!-- Category Banner 1: Robux -->
+        <div onclick="setCategory('robux'); document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})" class="glass-card card-robux rounded-3xl p-6 cursor-pointer border border-emerald-500/20 relative overflow-hidden group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold badge-neon-robux">ROBLOX STORE</span>
+            <span class="text-xs text-emerald-400 flex items-center gap-1">Tanlash &rarr;</span>
+          </div>
+          <h3 class="text-2xl font-black text-white font-gaming mb-1">Robux & Plus Store</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            40 dan 5250 gacha Robux, Plus xizmatlari va barcha Game Pass'lar kafolatlangan narxda.
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-emerald-300 font-semibold">
+            <span>7.500 UZS dan boshlab</span>
+            <span class="text-xl">💰</span>
+          </div>
+        </div>
+
+        <!-- Category Banner 2: Stars -->
+        <div onclick="setCategory('stars'); document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})" class="glass-card card-stars rounded-3xl p-6 cursor-pointer border border-amber-500/20 relative overflow-hidden group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold badge-neon-gold">AKKAUNTGA KIRMASDAN 🔒</span>
+            <span class="text-xs text-amber-400 flex items-center gap-1">Tanlash &rarr;</span>
+          </div>
+          <h3 class="text-2xl font-black text-white font-gaming mb-1">Telegram Stars</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Faqat @username orqali! 50 dan 500+ gacha Stars hamda Telegram Premium xizmati.
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-300 font-semibold">
+            <span>13.000 UZS dan boshlab</span>
+            <span class="text-xl">⭐️</span>
+          </div>
+        </div>
+
+        <!-- Category Banner 3: Brawl Stars -->
+        <div onclick="setCategory('brawl'); document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})" class="glass-card card-brawl rounded-3xl p-6 cursor-pointer border border-rose-500/20 relative overflow-hidden group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold badge-neon-brawl">SKIDKA GEMS 🔥</span>
+            <span class="text-xs text-rose-400 flex items-center gap-1">Tanlash &rarr;</span>
+          </div>
+          <h3 class="text-2xl font-black text-white font-gaming mb-1">Brawl Stars Donat</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Brawl Pass, Pass Plus hamda maxsus CHEGIRMALI Gemlar to'plami tezkor yuklash bilan.
+          </p>
+          <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-rose-300 font-semibold">
+            <span>17.000 UZS dan boshlab</span>
+            <span class="text-xl">🔥</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- PRODUCT CATALOG SECTION (FILTER, SEARCH, PRICING CARDS) -->
+    <!-- ============================================================== -->
+    <section id="catalog" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="text-xs font-bold text-cyanAccent uppercase tracking-widest mb-1">Rasmiy Tariflar</div>
+          <h2 id="category-header-title" class="text-3xl sm:text-4xl font-black text-white font-gaming">
+            Barcha Mahsulotlar & Xizmatlar
+          </h2>
+        </div>
+
+        <!-- Special Notice Badge Container (dynamically updated) -->
+        <div id="category-header-notice" class="hidden"></div>
+      </div>
+
+      <!-- Controls Bar: Category Tabs & Live Search -->
+      <div class="glass-panel rounded-2xl p-3 sm:p-4 mb-8 flex flex-col lg:flex-row items-center justify-between gap-4 border border-white/10">
+        
+        <!-- Category Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto w-full lg:w-auto pb-2 lg:pb-0 scrollbar-none">
+          <button 
+            type="button" 
+            data-category="all" 
+            class="category-tab tab-pill active px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white border border-cyanAccent/40 whitespace-nowrap cursor-pointer"
+          >
+            Barchasi
+          </button>
+          
+          <button 
+            type="button" 
+            data-category="robux" 
+            class="category-tab tab-pill px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-400 hover:text-white border border-transparent whitespace-nowrap cursor-pointer"
+          >
+            💰 Robux & Plus Store
+          </button>
+
+          <button 
+            type="button" 
+            data-category="stars" 
+            class="category-tab tab-pill px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-400 hover:text-white border border-transparent whitespace-nowrap cursor-pointer"
+          >
+            ⭐️ Telegram Stars & Premium
+          </button>
+
+          <button 
+            type="button" 
+            data-category="brawl" 
+            class="category-tab tab-pill px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-gray-400 hover:text-white border border-transparent whitespace-nowrap cursor-pointer"
+          >
+            🔥 Brawl Stars (Pass & Gems)
+          </button>
+        </div>
+
+        <!-- Live Search Field -->
+        <div class="w-full lg:w-72 relative">
+          <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-gray-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Qidirish (masalan: 1000, Pass...)" 
+            class="w-full pl-10 pr-10 py-2.5 rounded-xl bg-obsidian/70 border border-white/10 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-cyanAccent transition-colors"
+          />
+          <button 
+            id="clear-search" 
+            type="button" 
+            class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-white"
+            title="Tozalash"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Subcategory Pills Row -->
+      <div id="subcategory-pills" class="flex items-center gap-2 mb-6 overflow-x-auto pb-1 scrollbar-none"></div>
+
+      <!-- Item count indicator -->
+      <div class="flex items-center justify-between text-xs text-gray-400 mb-6">
+        <span id="item-count-badge" class="font-semibold text-gray-300">22 ta variant</span>
+        <span class="flex items-center gap-1.5 text-emerald-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          Barcha narxlar dolzarb va amalda
+        </span>
+      </div>
+
+      <!-- Dynamic Products Grid -->
+      <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Rendered via app.js -->
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- CUSTOM GAMEPASS & CUSTOM ORDERS BENTO CALLOUT -->
+    <!-- ============================================================== -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="glass-panel rounded-3xl p-6 sm:p-10 border border-cyanAccent/20 relative overflow-hidden">
+        <div class="ambient-orb ambient-cyan w-80 h-80 top-[-100px] right-[-100px]"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          <div class="lg:col-span-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyanAccent/10 border border-cyanAccent/30 text-cyanAccent text-xs font-bold uppercase mb-4">
+              Maxsus Buyurtmalar & Maslahat
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-black text-white font-gaming mb-3">
+              Katalogda yo'q miqdor yoki o'yin narsasi kerakmi?
+            </h3>
+            <p class="text-sm text-gray-300 leading-relaxed max-w-2xl mb-4">
+              Biz faqat standart paketlar emas, balki Roblox o'yinlaridagi (Blox Fruits, Blade Ball, Pet Simulator va h.k.) istalgan Game Pass, VIP obunalar, 500 dan 50.000 gacha Telegram Stars va oylik Telegram Premiumlarni ham eng arzon narxda yetkazib beramiz!
+            </p>
+            <div class="flex flex-wrap gap-3 text-xs text-gray-400">
+              <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> Parol shart emas</span>
+              <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> 100% Rasmiy donat</span>
+              <span class="flex items-center gap-1.5"><span class="text-emerald-400 font-bold">✓</span> Qulay to'lov usullari (Click / Payme)</span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-3">
+            <a 
+              href="https://t.me/flexyha" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="btn-cyber-primary py-4 px-6 rounded-2xl font-bold text-sm text-center text-white flex items-center justify-center gap-2"
+            >
+              <span>Adminga yozish (@flexyha)</span>
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a 
+              href="https://t.me/w1ndy_otziv" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="glass-panel hover:bg-white/10 py-3.5 px-6 rounded-2xl font-semibold text-xs text-center text-gray-300 transition-colors"
+            >
+              Oldingi xaridlar isbotlarini ko'rish &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- TRUST & FOOTER / REVIEWS SECTION -->
+    <!-- ============================================================== -->
+    <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">Nega aynan biz?</div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white font-gaming mb-4">
+          100% Ishonchli, Halol va Xavfsiz Xizmat
+        </h2>
+        <p class="text-sm text-gray-300">
+          Bizning do'konimiz orqali har kuni yuzlab o'yinchilar hech qanday xavf-xatarsiz o'z hisoblarini to'ldirishadi.
+        </p>
+      </div>
+
+      <!-- 3 Core Feature Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        
+        <!-- Card 1 -->
+        <div class="glass-card rounded-3xl p-8 border border-emerald-500/20">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-2xl mb-6 text-emerald-400">
+            🛡️
+          </div>
+          <h3 class="text-xl font-extrabold text-white font-gaming mb-2">100% Ishonchli va Halol</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Minglab mamnun mijozlar, real skrinshotlar va cheklar. Isbotlar va otzivlar kanalimizda barchasi ochiq taqdim etilgan.
+          </p>
+          <a href="https://t.me/w1ndy_otziv" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300">
+            <span>Kanalimiz: @w1ndy_otziv</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="glass-card rounded-3xl p-8 border border-cyanAccent/20">
+          <div class="w-14 h-14 rounded-2xl bg-cyanAccent/15 border border-cyanAccent/30 flex items-center justify-center text-2xl mb-6 text-cyanAccent">
+            ⚡️
+          </div>
+          <h3 class="text-xl font-extrabold text-white font-gaming mb-2">Tezkor Yetkazib Berish</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Buyurtmalar eng qisqa vaqt ichida — 1 daqiqadan 10 daqiqagacha bo'lgan muddatda to'liq bajariladi va mijozga hisobot beriladi.
+          </p>
+          <span class="text-xs font-semibold text-cyanAccent">O'rtacha vaqt: 3 daqiqa</span>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="glass-card rounded-3xl p-8 border border-purpleAccent/20">
+          <div class="w-14 h-14 rounded-2xl bg-purpleAccent/15 border border-purpleAccent/30 flex items-center justify-center text-2xl mb-6 text-purpleAccent">
+            🔒
+          </div>
+          <h3 class="text-xl font-extrabold text-white font-gaming mb-2">Xavfsiz Xizmat</h3>
+          <p class="text-sm text-gray-300 leading-relaxed mb-4">
+            Telegram Stars va ko'plab xizmatlar akkauntga kirmasdan amalga oshiriladi. Shaxsiy ma'lumotlaringiz 100% daxlsiz qoladi.
+          </p>
+          <span class="text-xs font-semibold text-purple-300">Hech qanday maxfiy kod talab etilmaydi</span>
+        </div>
+
+      </div>
+
+      <!-- Real Feedback Snapshot Grid -->
+      <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-white/10">
+        <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
+          <div>
+            <h4 class="text-lg font-bold text-white font-gaming">Mijozlarimizning So'nggi Fikrlari</h4>
+            <p class="text-xs text-gray-400">Telegram kanalimizdan olingan real sharhlar</p>
+          </div>
+          <a 
+            href="https://t.me/w1ndy_otziv" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="px-4 py-2 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold hover:bg-amber-500/20 transition-colors flex items-center gap-1.5"
+          >
+            <span>Barcha isbotlarni ko'rish (@w1ndy_otziv)</span>
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          
+          <div class="bg-obsidian/60 p-4 rounded-2xl border border-white/5">
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
+              <span class="font-bold text-white">@shox_rbx</span>
+              <span class="text-amber-400">★★★★★</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed mb-3">
+              "1000 Robux olgandim, 3 minutda yetib keldi! Narxi ham bozordan ancha arzon ekan, rahmat @flexyha katta!"
+            </p>
+            <span class="text-[11px] text-emerald-400 font-mono">Xarid: 1000 ROBUX</span>
+          </div>
+
+          <div class="bg-obsidian/60 p-4 rounded-2xl border border-white/5">
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
+              <span class="font-bold text-white">@anvar_dev</span>
+              <span class="text-amber-400">★★★★★</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed mb-3">
+              "Telegram Stars oldim botim uchun, eng zo'r tomoni akkauntimga kirmasdan shundoq usernamega tashlab berishdi. Halol!"
+            </p>
+            <span class="text-[11px] text-amber-400 font-mono">Xarid: 250 Telegram Stars</span>
+          </div>
+
+          <div class="bg-obsidian/60 p-4 rounded-2xl border border-white/5">
+            <div class="flex items-center justify-between text-xs text-gray-400 mb-2">
+              <span class="font-bold text-white">@brawl_king99</span>
+              <span class="text-amber-400">★★★★★</span>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed mb-3">
+              "Brawl Pass Plus va 360 gem skidka bilan oldim. Admin tez javob berdi, muammosiz akkauntga tushdi."
+            </p>
+            <span class="text-[11px] text-rose-400 font-mono">Xarid: Brawl Pass Plus</span>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- FAQ (SAVOL-JAVOBLAR) SECTION -->
+    <!-- ============================================================== -->
+    <section id="faq" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center mb-10">
+        <div class="text-xs font-bold text-cyanAccent uppercase tracking-widest mb-1">Ko'p Beriladigan Savollar</div>
+        <h2 class="text-3xl font-black text-white font-gaming">Savollaringiz bormi?</h2>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="glass-panel rounded-2xl p-5 border border-white/10 group cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base list-none">
+            <span>Qanday qilib sotib olaman?</span>
+            <span class="faq-chevron text-cyanAccent ml-2">▼</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed pt-3 border-t border-white/5">
+            Katalogdan o'zingizga kerakli paketni tanlab <b>"Sotib olish"</b> tugmasini bosing. Ochilgan oynada ma'lumotingizni kiritib to'g'ridan-to'g'ri <b>@flexyha</b> adminga Telegram orqali yozishingiz kifoya!
+          </div>
+        </details>
+
+        <details class="glass-panel rounded-2xl p-5 border border-white/10 group cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base list-none">
+            <span>Akkauntim paroli kerak bo'ladimi?</span>
+            <span class="faq-chevron text-cyanAccent ml-2">▼</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed pt-3 border-t border-white/5">
+            <b>Yo'q!</b> Telegram Stars va ko'plab Roblox xizmatlari parolsiz, faqatgina foydalanuvchi nomi (@username yoki Game Pass havolasi) orqali yetkaziladi. Akkauntingiz mutlaqo xavfsiz qoladi.
+          </div>
+        </details>
+
+        <details class="glass-panel rounded-2xl p-5 border border-white/10 group cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base list-none">
+            <span>To'lov qaysi usullarda qabul qilinadi?</span>
+            <span class="faq-chevron text-cyanAccent ml-2">▼</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed pt-3 border-t border-white/5">
+            O'zbekistonning barcha asosiy to'lov tizimlari orqali: <b>Click, Payme, Uzcard, Humo</b> hamda kelishilgan boshqa xalqaro usullarda to'lov qilishingiz mumkin.
+          </div>
+        </details>
+
+        <details class="glass-panel rounded-2xl p-5 border border-white/10 group cursor-pointer">
+          <summary class="flex items-center justify-between font-bold text-white text-sm sm:text-base list-none">
+            <span>Buyurtma qancha vaqtda bajariladi?</span>
+            <span class="faq-chevron text-cyanAccent ml-2">▼</span>
+          </summary>
+          <div class="mt-3 text-xs sm:text-sm text-gray-300 leading-relaxed pt-3 border-t border-white/5">
+            To'lov tasdiqlanganidan so'ng o'rtacha <b>1 daqiqadan 10 daqiqagacha</b> bo'lgan vaqt ichida buyurtmangiz to'liq hisobingizga yuklanadi.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================== -->
+  <!-- FOOTER SECTION -->
+  <!-- ============================================================== -->
+  <footer class="border-t border-white/10 bg-surface/70 backdrop-blur-2xl pt-14 pb-12 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Grid: Brand & Direct Action Channels -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2.5 mb-3">
+            <span class="text-2xl">👑</span>
+            <span class="font-extrabold text-xl font-gaming text-white">WINDY SERVICE</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed mb-4">
+            O'yin donatlari, Roblox Robux, Plus xizmatlari va Telegram Stars bo'yicha O'zbekistondagi eng ishonchli do'kon.
+          </p>
+          <div class="text-xs text-cyanAccent font-semibold">
+            ⚡️ Tez • Arzon • Halol • Xavfsiz
+          </div>
+        </div>
+
+        <!-- Direct Clickable Card 1: Admin Contact -->
+        <a 
+          href="https://t.me/flexyha" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="glass-panel rounded-2xl p-5 border border-rose-500/25 hover:border-rose-500/60 transition-all flex flex-col justify-between group hover:-translate-y-1"
+        >
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg mb-3">
+              ☎️
+            </div>
+            <div class="text-xs uppercase font-bold text-gray-400">Murojaat uchun (Admin)</div>
+            <div class="text-base font-extrabold text-white font-gaming mt-1 group-hover:text-rose-400 transition-colors">
+              @flexyha
+            </div>
+          </div>
+          <div class="mt-4 text-[11px] text-gray-400 flex items-center gap-1">
+            <span>To'g'ridan-to'g'ri yozish</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Direct Clickable Card 2: Main Channel -->
+        <a 
+          href="https://t.me/Roblox_W1ndy" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="glass-panel rounded-2xl p-5 border border-cyanAccent/25 hover:border-cyanAccent/60 transition-all flex flex-col justify-between group hover:-translate-y-1"
+        >
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-cyanAccent/20 text-cyanAccent flex items-center justify-center text-lg mb-3">
+              📢
+            </div>
+            <div class="text-xs uppercase font-bold text-gray-400">Asosiy Kanal</div>
+            <div class="text-base font-extrabold text-white font-gaming mt-1 group-hover:text-cyanAccent transition-colors">
+              @Roblox_W1ndy
+            </div>
+          </div>
+          <div class="mt-4 text-[11px] text-gray-400 flex items-center gap-1">
+            <span>Yangiliklar & Konkurslar</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+        <!-- Direct Clickable Card 3: Proofs & Reviews -->
+        <a 
+          href="https://t.me/w1ndy_otziv" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="glass-panel rounded-2xl p-5 border border-amber-500/25 hover:border-amber-500/60 transition-all flex flex-col justify-between group hover:-translate-y-1"
+        >
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg mb-3">
+              🎖
+            </div>
+            <div class="text-xs uppercase font-bold text-gray-400">Isbotlar va Otzivlar</div>
+            <div class="text-base font-extrabold text-white font-gaming mt-1 group-hover:text-amber-400 transition-colors">
+              @w1ndy_otziv
+            </div>
+          </div>
+          <div class="mt-4 text-[11px] text-gray-400 flex items-center gap-1">
+            <span>Mijozlar isbotlari</span>
+            <span>&rarr;</span>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Payment Gateways Accepted Badges -->
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-2 flex-wrap text-xs text-gray-400">
+          <span>Qabul qilinadigan to'lovlar:</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 font-bold text-emerald-300">Click</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 font-bold text-cyan-300">Payme</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 font-bold text-purple-300">Uzcard</span>
+          <span class="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 font-bold text-amber-300">Humo</span>
+        </div>
+
+        <div class="text-xs text-gray-400 text-center sm:text-right">
+          &copy; 2026 <b class="text-white">ROBLOX WINDY (Windy Service)</b>. Barcha huquqlar himoyalangan.
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- INTERACTIVE ORDER MODAL (GLASSMORPHIC) -->
+  <!-- ============================================================== -->
+  <div 
+    id="order-modal" 
+    class="modal-overlay hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-xl flex items-center justify-center p-4"
+    role="dialog"
+    aria-modal="true"
+  >
+    <div class="modal-content glass-panel w-full max-w-lg rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl relative">
+      
+      <!-- Modal Close Button -->
+      <button 
+        id="modal-close-btn" 
+        class="absolute top-5 right-5 text-gray-400 hover:text-white p-2 rounded-xl glass-panel"
+        aria-label="Yopish"
+      >
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3 mb-6">
+        <div id="modal-item-icon" class="flex-shrink-0"></div>
+        <div>
+          <span id="modal-item-category" class="text-xs text-cyanAccent font-semibold block"></span>
+          <h3 id="modal-item-title" class="text-2xl font-black text-white font-gaming"></h3>
+        </div>
+      </div>
+
+      <!-- Price & Delivery Summary Box -->
+      <div class="bg-obsidian/70 rounded-2xl p-4 border border-white/10 mb-6 flex items-center justify-between">
+        <div>
+          <span class="text-[11px] uppercase font-bold text-gray-400 block">Jami To'lov:</span>
+          <span id="modal-item-price" class="text-2xl font-black text-cyanAccent font-gaming"></span>
+        </div>
+        <div class="text-right">
+          <span class="text-[11px] uppercase font-bold text-gray-400 block">Yetkazish:</span>
+          <span id="modal-item-delivery" class="text-sm font-bold text-emerald-400 font-mono"></span>
+        </div>
+      </div>
+
+      <!-- Account Input Field -->
+      <div class="mb-6">
+        <label id="modal-account-label" class="block text-xs font-bold text-gray-300 mb-2">
+          Foydalanuvchi ma'lumoti:
+        </label>
+        <input 
+          type="text" 
+          id="modal-account-input" 
+          class="w-full px-4 py-3 rounded-xl bg-obsidian/80 border border-white/15 text-sm text-white focus:outline-none focus:border-cyanAccent transition-colors placeholder-gray-500 font-mono"
+          placeholder=""
+        />
+        <p id="modal-account-hint" class="text-[11px] text-gray-400 mt-1.5 leading-relaxed"></p>
+      </div>
+
+      <!-- Quick Action Buttons inside Modal -->
+      <div class="space-y-3">
+        <!-- Proceed directly to Telegram with pre-filled message -->
+        <button 
+          id="modal-submit-admin" 
+          class="w-full btn-cyber-admin py-3.5 px-4 rounded-xl font-bold text-sm text-white flex items-center justify-center gap-2 cursor-pointer shadow-lg"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .26z"/>
+          </svg>
+          <span>Adminga yozish (@flexyha)</span>
+        </button>
+
+        <div class="grid grid-cols-2 gap-3">
+          <!-- Copy order details -->
+          <button 
+            id="modal-copy-btn" 
+            class="w-full glass-panel hover:bg-white/10 py-2.5 px-3 rounded-xl text-xs font-semibold text-gray-200 border border-white/10 flex items-center justify-center gap-1.5 cursor-pointer transition-colors"
+          >
+            <svg class="w-3.5 h-3.5 text-cyanAccent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span>Matnni nusxalash</span>
+          </button>
+
+          <!-- Cancel / Close -->
+          <button 
+            id="modal-cancel-btn" 
+            class="w-full glass-panel hover:bg-white/10 py-2.5 px-3 rounded-xl text-xs font-semibold text-gray-400 hover:text-white border border-white/10 transition-colors"
+          >
+            Bekor qilish
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- FLOATING TELEGRAM ACTION BUTTON (FAB) -->
+  <!-- ============================================================== -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <a 
+      href="https://t.me/flexyha" 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="fab-telegram w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl shadow-2xl hover:scale-110 active:scale-95 transition-all group relative cursor-pointer"
+      title="Admin bilan to'g'ridan-to'g'ri aloqa (@flexyha)"
+    >
+      <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .26z"/>
+      </svg>
+      <!-- Pulse ping ring -->
+      <span class="absolute -top-1 -right-1 w-4 h-4 bg-cyanAccent rounded-full animate-ping opacity-75"></span>
+      <span class="absolute -top-1 -right-1 w-4 h-4 bg-cyanAccent rounded-full border-2 border-obsidian"></span>
+    </a>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- RECENT ORDER POPUP NOTIFICATION (SOCIAL PROOF) -->
+  <!-- ============================================================== -->
+  <div 
+    id="recent-order-popup" 
+    class="fixed bottom-6 left-6 z-40 transition-all duration-500 opacity-0 pointer-events-none translate-y-4"
+  ></div>
+
+  <!-- ============================================================== -->
+  <!-- GLOBAL TOAST NOTIFICATION -->
+  <!-- ============================================================== -->
+  <div 
+    id="toast" 
+    class="fixed top-24 right-6 z-50 glass-panel px-5 py-3 rounded-2xl border border-cyanAccent/40 shadow-2xl transition-all duration-300 opacity-0 pointer-events-none translate-y-4 flex items-center gap-3 max-w-sm"
+  >
+    <span class="text-cyanAccent text-lg">⚡️</span>
+    <span id="toast-message" class="text-xs sm:text-sm font-semibold text-white"></span>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
